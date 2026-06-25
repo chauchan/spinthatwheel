@@ -1,13 +1,14 @@
 extends Control
 class_name Roulette
 
-enum SpinResult { ATTACK, SUPPORT, ENERGY, CHOSE, ALL}
+enum SpinResult { ATTACK, TANK, MISC, SUPPORT, CHOOSE, ALL}
 
 var weights := {
-	SpinResult.ATTACK: 35,
-	SpinResult.SUPPORT: 25,
-	SpinResult.ENERGY: 25,
-	SpinResult.CHOSE: 10,
+	SpinResult.ATTACK: 20,
+	SpinResult.TANK: 20,
+	SpinResult.MISC: 20,
+	SpinResult.SUPPORT: 20,
+	SpinResult.CHOOSE: 15,
 	SpinResult.ALL: 5,
 }
 
@@ -65,10 +66,12 @@ func _name_for(r: SpinResult) -> String:
 			return "Draw from attack deck"
 		SpinResult.SUPPORT:
 			return "Draw from support deck"
-		SpinResult.ENERGY:
-			return "Draw from energy deck"
-		SpinResult.CHOSE:
-			return "Chose ONE deck to draw from"
+		SpinResult.TANK:
+			return "Draw from tank deck"
+		SpinResult.MISC:
+			return "Draw from miscellaneous deck"
+		SpinResult.CHOOSE:
+			return "Choose ONE deck to draw from"
 		SpinResult.ALL:
 			return "Draw one from each deck"
 	return "?"
@@ -76,11 +79,8 @@ func _name_for(r: SpinResult) -> String:
 func _all_names() -> Array[String]:
 	return ["Draw from attack deck", 
 	"Draw from support deck", 
-	"Draw from energy deck",
-	"Chose ONE deck to draw from",
+	"Draw from tank deck",
+	"Draw from miscellaneous deck",
+	"Choose ONE deck to draw from",
 	"Draw one from each deck"]	
-	
-
-
-
 	
