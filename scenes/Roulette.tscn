@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dk2vtwayk8hrk"]
+
+[node name="Roulette" type="Control" unique_id=1460260756]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultLabel" type="Label" parent="." unique_id=1083798879]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SpinButton" type="Button" parent="." unique_id=1653065998]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "SPIN THAT WHEEL"
