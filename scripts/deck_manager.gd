@@ -3,20 +3,24 @@ class_name DeckManager
 
 var deck_attack: Array[CardData] = []
 var deck_support: Array[CardData] = []
-var deck_energy: Array[CardData] = []
+var deck_tank: Array[CardData] = []
+var deck_misc: Array[CardData] = []
 
 var discard_attack: Array[CardData] = []
 var discard_support: Array[CardData] = []
-var discard_energy: Array[CardData] = []
+var discard_tank: Array[CardData] = []
+var discard_misc: Array[CardData] = []
 
 
 func setup_starter_deck() -> void:
 	deck_attack = CardDB.get_starter_attack()
 	deck_support = CardDB.get_starter_support()
-	deck_energy = CardDB.get_starter_energy()
+	deck_tank = CardDB.get_starter_tank()
+	deck_misc = CardDB.get_starter_misc()
 	deck_attack.shuffle()
 	deck_support.shuffle()
-	deck_energy.shuffle()
+	deck_tank.shuffle()
+	deck_misc.shuffle()
 	
 
 func draw_from(type: CardData.CardType) -> CardData:
@@ -36,17 +40,21 @@ func _get_deck(type: CardData.CardType) -> Array:
 			return deck_attack
 		CardData.CardType.SUPPORT:
 			return deck_support
-		CardData.CardType.ENERGY:
-			return deck_energy
+		CardData.CardType.TANK:
+			return deck_tank
+		CardData.CardType.MISC:
+			return deck_misc
 	return []
 	
 	
-func _det_discard(type: CardData.CardType) -> Array:
+func _get_discard(type: CardData.CardType) -> Array:
 	match type:
 		CardData.CardType.ATTACK:
 			return discard_attack
 		CardData.CardType.SUPPORT:
 			return discard_support
-		CardData.CardType.ENERGY:
-			return discard_energy
+		CardData.CardType.TANK:
+			return discard_tank
+		CardData.CardType.MISC:
+			return discard_misc
 	return []
