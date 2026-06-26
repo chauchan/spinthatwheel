@@ -13,11 +13,9 @@ static func generate_card(type: CardData.CardType, rarity: CardData.Rarity) -> C
 
 static func _get_pool(type: CardData.CardType) -> Array[CardData]:
 	match type:
-		CardData.CardType.ATTACK:  return CardDB.get_all_attack()
+		CardData.CardType.CHAR:  return CardDB.get_all_char()
 		CardData.CardType.SUPPORT: return CardDB.get_all_support()
-		CardData.CardType.TANK:    return CardDB.get_all_tank()
-		CardData.CardType.MISC:    return CardDB.get_all_misc()
-		return []
+	return []
 
 static func _apply_rarity(base: CardData, rarity: CardData.Rarity) -> CardData:
 	var card := CardData.new()
@@ -36,4 +34,3 @@ static func _apply_rarity(base: CardData, rarity: CardData.Rarity) -> CardData:
 		card.power = base.power
 		card.health = base.health
 	return card
-
