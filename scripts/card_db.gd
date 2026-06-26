@@ -44,3 +44,18 @@ static func _make(n: String, t: CardData.CardType, c: int, p: int, h: int, d: St
 	card.description = d
 	card.applies_rarity = ar
 	return card
+
+
+
+static func get_all_attack() -> Array[CardData]:
+    return get_starter_attack()
+
+static func get_all_tank() -> Array[CardData]:
+    return get_starter_tank()
+
+static func get_all_misc() -> Array[CardData]:
+    return get_starter_misc()
+
+static func get_all_support() -> Array[CardData]:
+    return get_starter_support()
+
