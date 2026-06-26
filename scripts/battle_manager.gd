@@ -1,6 +1,5 @@
 extends Node
 
-
 enum Phase {PREP, PLAYER_TURN, AI_TURN, BATTLE_END}
 
 signal battle_started

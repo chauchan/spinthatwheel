@@ -73,7 +73,6 @@ func _card_to_dict(card: CardData) -> Dictionary:
 		"applies_rarity": card.applies_rarity,
 		"rarity": card.rarity,
 		"effect_duration": card.effect_duration
-
 	}
 
 func _dict_to_card(data: Dictionary) -> CardData:
