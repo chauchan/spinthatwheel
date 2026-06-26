@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerCollection="*uid://d0m1ltiregrx1"
+BattleManager="*uid://38ssrq7kmqbr"
 
 [physics]
 

@@ -18,3 +18,7 @@ func draw_from() -> CardData:
 	return deck.pop_back()
 	
 	
+func setup_combat_deck(cards: Array[CardData]) -> void:
+	deck = cards
+	deck.shuffle()
+	discard = []

@@ -3,7 +3,7 @@ class_name CardData
 
 enum CardType { CHAR, SUPPORT }
 enum Rarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY }
-
+enum EffectDuration { INSTANT, PERSISTENT }
 
 @export var card_name: String = ""
 @export var type: CardType = CardType.CHAR
@@ -12,7 +12,9 @@ enum Rarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY }
 @export var health: int = 0
 @export var description: String = ""
 @export var applies_rarity: bool = true
+@export var effect_duration: EffectDuration = EffectDuration.INSTANT
 @export var rarity: Rarity = Rarity.COMMON
+
 
 
 
@@ -24,3 +26,5 @@ func get_rarity_multiplier() -> float:
 		Rarity.EPIC:      return 2.0
 		Rarity.LEGENDARY: return 3.0
 	return 1.0
+
+var turns_remaining: int = 0

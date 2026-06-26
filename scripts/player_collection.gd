@@ -71,7 +71,9 @@ func _card_to_dict(card: CardData) -> Dictionary:
 		"health": card.health,
 		"description": card.description,
 		"applies_rarity": card.applies_rarity,
-		"rarity": card.rarity
+		"rarity": card.rarity,
+		"effect_duration": card.effect_duration
+
 	}
 
 func _dict_to_card(data: Dictionary) -> CardData:
@@ -84,7 +86,5 @@ func _dict_to_card(data: Dictionary) -> CardData:
 	card.description = data["description"]
 	card.applies_rarity = data["applies_rarity"]
 	card.rarity = data["rarity"]
+	card.effect_duration = data["effect_duration"]
 	return card
-
-
-
