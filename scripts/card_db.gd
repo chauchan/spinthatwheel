@@ -49,20 +49,20 @@ static func _make(n: String, t: CardData.CardType, c: int, p: int, h: int, d: St
 
 static func get_all_attack() -> Array[CardData]:
 	var cards: Array[CardData] = []
-	cards.append(get_starter_attack())
+	cards.append_array(get_starter_attack())
 	return cards
 
 static func get_all_tank() -> Array[CardData]:
 	var cards: Array[CardData] = []
-	cards.append(get_starter_tank())
+	cards.append_array(get_starter_tank())
 	return cards
 
 static func get_all_misc() -> Array[CardData]:
 	var cards: Array[CardData] = []
-	cards.append(get_starter_misc())
+	cards.append_array(get_starter_misc())
 	return cards
 
 static func get_all_support() -> Array[CardData]:
 	var cards: Array[CardData] = []
-	cards.append(get_starter_support())
+	cards.append_array(get_starter_support())
 	return cards
