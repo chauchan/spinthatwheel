@@ -35,12 +35,12 @@ static func get_starter_support() -> Array[CardData]:
 
 
 static func _make(n: String, t: CardData.CardType, c: int, p: int, h: int, d: String, ar: bool = true) -> CardData:
-    var card := CardData.new()
-    card.card_name = n
-    card.type = t
-    card.cost = c
-    card.power = p
-    card.health = h
-    card.description = d
-    card.applies_rarity = ar
-    return card
+	var card := CardData.new()
+	card.card_name = n
+	card.type = t
+	card.cost = c
+	card.power = p
+	card.health = h
+	card.description = d
+	card.applies_rarity = ar
+	return card
