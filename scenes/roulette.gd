@@ -1,13 +1,12 @@
 extends Control
 class_name Roulette
 
-enum SpinResult { ATTACK, TANK, MISC, SUPPORT, CHOOSE, ALL}
+enum SpinResult { CHAR, SUPPORT, CHOOSE, ALL, MONEY}
 
 var weights := {
-	SpinResult.ATTACK: 20,
-	SpinResult.TANK: 20,
-	SpinResult.MISC: 20,
-	SpinResult.SUPPORT: 20,
+	SpinResult.CHAR: 30,
+	SpinResult.MONEY: 20,
+	SpinResult.SUPPORT: 30,
 	SpinResult.CHOOSE: 15,
 	SpinResult.ALL: 5,
 }
@@ -47,7 +46,7 @@ func _weighted_pick() -> SpinResult:
 		acc += weights[key]
 		if roll<acc:
 			return key
-	return SpinResult.ATTACK
+	return SpinResult.CHAR
 
 func _play_spin_animation(final_result: SpinResult) -> void:
 	var names := _all_names()
@@ -62,25 +61,22 @@ func _play_spin_animation(final_result: SpinResult) -> void:
 
 func _name_for(r: SpinResult) -> String:
 	match r:
-		SpinResult.ATTACK:
-			return "Draw from attack deck"
+		SpinResult.CHAR:
+			return "Get character card"
 		SpinResult.SUPPORT:
-			return "Draw from support deck"
-		SpinResult.TANK:
-			return "Draw from tank deck"
-		SpinResult.MISC:
-			return "Draw from miscellaneous deck"
+			return "Get support card"
+		SpinResult.MONEY:
+			return "Gain some SPARE CHANGE"
 		SpinResult.CHOOSE:
-			return "Choose ONE deck to draw from"
+			return "Get character or support card"
 		SpinResult.ALL:
-			return "Draw one from each deck"
+			return "Get one of each"
 	return "?"
 	
 func _all_names() -> Array[String]:
-	return ["Draw from attack deck", 
-	"Draw from support deck", 
-	"Draw from tank deck",
-	"Draw from miscellaneous deck",
-	"Choose ONE deck to draw from",
-	"Draw one from each deck"]	
+	return ["Get character card", 
+	"Get support card", 
+	"Gain some SPARE CHANGE",
+	"Get character or support card",
+	"Get one of each"]	
 	
