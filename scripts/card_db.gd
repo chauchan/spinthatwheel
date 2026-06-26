@@ -1,21 +1,13 @@
 extends Node
 class_name CardDB
 
-static func get_starter_attack() -> Array[CardData]:
+static func get_starter_char() -> Array[CardData]:
 	var cards: Array[CardData] = []
-	cards.append(_make("Intern", CardData.CardType.ATTACK, 1, 1, 2, "Cannon Fodder"))
-	cards.append(_make("Salesman", CardData.CardType.ATTACK, 3, 4, 3, "Glass Cannon"))
-	return cards
-	
-static func get_starter_tank() -> Array[CardData]:
-	var cards: Array[CardData] = []
-	cards.append(_make("Accountant", CardData.CardType.TANK, 2, 2, 4, "Tank"))
-	cards.append(_make("Shift Manager", CardData.CardType.TANK, 4, 6, 5, "BigBoi"))
-	return cards
-
-static func get_starter_misc() -> Array[CardData]:
-	var cards: Array[CardData] = []
-	cards.append(_make("HR", CardData.CardType.MISC, 2, 1, 3, "Gets energy back when this card dies"))
+	cards.append(_make("Intern", CardData.CardType.CHAR, 1, 1, 2, "Cannon Fodder"))
+	cards.append(_make("Salesman", CardData.CardType.CHAR, 3, 4, 3, "Glass Cannon"))
+	cards.append(_make("Accountant", CardData.CardType.CHAR, 2, 2, 4, "Tank"))
+	cards.append(_make("Shift Manager", CardData.CardType.CHAR, 4, 6, 5, "BigBoi"))
+	cards.append(_make("HR", CardData.CardType.CHAR, 2, 1, 3, "Gets energy back when this card dies"))
 	return cards
 
 
@@ -47,19 +39,9 @@ static func _make(n: String, t: CardData.CardType, c: int, p: int, h: int, d: St
 
 
 
-static func get_all_attack() -> Array[CardData]:
+static func get_all_char() -> Array[CardData]:
 	var cards: Array[CardData] = []
-	cards.append_array(get_starter_attack())
-	return cards
-
-static func get_all_tank() -> Array[CardData]:
-	var cards: Array[CardData] = []
-	cards.append_array(get_starter_tank())
-	return cards
-
-static func get_all_misc() -> Array[CardData]:
-	var cards: Array[CardData] = []
-	cards.append_array(get_starter_misc())
+	cards.append_array(get_starter_char())
 	return cards
 
 static func get_all_support() -> Array[CardData]:

@@ -1,12 +1,12 @@
 extends Resource
 class_name CardData
 
-enum CardType { ATTACK, SUPPORT, TANK, MISC }
+enum CardType { CHAR, SUPPORT }
 enum Rarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY }
 
 
 @export var card_name: String = ""
-@export var type: CardType = CardType.ATTACK
+@export var type: CardType = CardType.CHAR
 @export var cost: int = 0
 @export var power: int = 0
 @export var health: int = 0
