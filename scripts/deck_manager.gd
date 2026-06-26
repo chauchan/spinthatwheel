@@ -14,11 +14,7 @@ func setup_starter_deck() -> void:
 
 func draw_from() -> CardData:
 	if deck.is_empty():
-		if discard.is_empty():
-			return null
-		deck.append_array(discard)
-		discard.clear()
-		deck.shuffle()
+		return null
 	return deck.pop_back()
 	
 	
